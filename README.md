@@ -1,5 +1,5 @@
-Dockerized EAGLE
-================
+Dockerized Arduino IDE
+======================
 
 This project is about installing and running the Arduino IDE from a docker image.
 
