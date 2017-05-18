@@ -14,15 +14,20 @@ RUN export uid=1000 gid=1000 && \
     chown ${uid}:${gid} -R /home/developer && \
     apt-get update \
 	&& apt-get install -y \
+        software-properties-common \
 		wget \
 		openjdk-9-jre \
 		xvfb \
         xz-utils \
+    && add-apt-repository ppa:ubuntuhandbook1/apps \
+    && apt-get update \
+    && apt-get install -y avrdude avrdude-doc \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Add developer user to the dialout group to be ale to write the serial USB device
-RUN sed "s/^dialout.*/&developer/" /etc/group -i
+RUN sed "s/^dialout.*/&developer/" /etc/group -i \
+    && sed "s/^root.*/&developer/" /etc/group -i
 
 ENV ARDUINO_IDE_VERSION 1.6.7
 RUN (wget -q -O- https://downloads.arduino.cc/arduino-${ARDUINO_IDE_VERSION}-linux64.tar.xz \
