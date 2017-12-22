@@ -23,6 +23,7 @@ Run this if you want the container to be removed after the session:
     docker run \
         -it \
         --rm \
+        --network=host \
         --privileged \
         -e DISPLAY=$DISPLAY \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
