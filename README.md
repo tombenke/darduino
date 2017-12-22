@@ -3,12 +3,15 @@ Dockerized Arduino IDE
 
 This project is about installing and running the Arduino IDE from a docker image.
 
-You do not have to pollute your original operating system, with installing the several libs and the app itself.
+You do not have to pollute your original operating system,
+with installing the several libs and the app itself.
 Instead you only need docker to be installed.
 
-At the same time you can keep your projects on your disk, that the arduino docker container will reach through volumes.
+At the same time you can keep your projects on your disk,
+that the arduino docker container will reach through volumes.
 
-This solution was made based on the [Running GUI apps with Docker](http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/)
+This solution was made based on the
+[Running GUI apps with Docker](http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/)
 blog post written by Fábio Rehm.
 
 
@@ -25,7 +28,7 @@ Run this if you want the container to be removed after the session:
         -v /tmp/.X11-unix:/tmp/.X11-unix \
         -v /dev/ttyUSB0:/dev/ttyUSB0 \
         -v $HOME/topics:/topics \
-        tombenke/darduino:latest \
+        tombenke/darduino:v1.6.7 \
         arduino
 ```
 
