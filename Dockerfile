@@ -29,7 +29,7 @@ RUN export uid=1000 gid=1000 && \
 RUN sed "s/^dialout.*/&developer/" /etc/group -i \
     && sed "s/^root.*/&developer/" /etc/group -i
 
-ENV ARDUINO_IDE_VERSION 1.6.7
+ENV ARDUINO_IDE_VERSION 1.8.5
 RUN (wget -q -O- https://downloads.arduino.cc/arduino-${ARDUINO_IDE_VERSION}-linux64.tar.xz \
 	| tar xJC /usr/local/share \
 	&& ln -s /usr/local/share/arduino-${ARDUINO_IDE_VERSION} /usr/local/share/arduino \

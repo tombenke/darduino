@@ -38,6 +38,18 @@ or just simply run the `./arduino.sh` shell script, which contains the command l
 In case you want to make changes, then start the container without the `--rm` switch, 
 and execute the `commit` and `push` docker commands.
 
+### ESP8266 Board Manager usage
+
+Starting with 1.6.4, Arduino allows installation of third-party platform packages using Boards Manager.
+
+1. Start Arduino and open Preferences window.
+2. Enter `http://arduino.esp8266.com/stable/package_esp8266com_index.json`
+   into Additional Board Manager URLs field.
+   You can add multiple URLs, separating them with commas.
+3. Open __Boards Manager__ from __Tools__ > __Board__ menu and install esp8266 platform.
+4. Select your ESP8266 board from __Tools__ > __Board__ menu after installation.
+   For `ESP8266-12F`, select the __Generic ESP8266 Module__.
+
 
 ## References
 

@@ -15,6 +15,6 @@ docker run \
     -v $HOME/topics:/topics \
     -v $HOME/topics/arduino:/home/developer/Arduino \
     --name arduino \
-    tombenke/darduino:v1.6.7 \
+    tombenke/darduino:v1.8.5 \
     arduino
 
