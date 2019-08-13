@@ -19,6 +19,7 @@ RUN export uid=1000 gid=1000 && \
 		openjdk-9-jre \
 		xvfb \
         xz-utils \
+	sudo \
     && add-apt-repository ppa:ubuntuhandbook1/apps \
     && apt-get update \
     && apt-get install -y avrdude avrdude-doc \
