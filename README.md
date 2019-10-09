@@ -33,6 +33,26 @@ Run this if you want the container to be removed after the session:
         arduino
 ```
 
+Or you can use `docker-compose` script like:
+
+```yml
+version: "3.4"
+
+services:
+  arduino:
+    image: tombenke/darduino
+    container_name: arduino
+    network_mode: "host"
+    environment:
+      - "DISPLAY=${DISPLAY}"
+    volumes:
+      - "/tmp/.X11-unix:/tmp/.X11-unix"
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
+      - "${HOME}/topics:/topics"
+    command: "arduino"
+    privileged: true
+```
+
 or just simply run the `./arduino.sh` shell script, which contains the command listed above.
 
 In case you want to make changes, then start the container without the `--rm` switch, 
