@@ -24,12 +24,11 @@ Run this if you want the container to be removed after the session:
         -it \
         --rm \
         --network=host \
-        --privileged \
         -e DISPLAY=$DISPLAY \
-        -v /tmp/.X11-unix:/tmp/.X11-unix \
-        -v /dev/ttyUSB0:/dev/ttyUSB0 \
-        -v $HOME/topics:/topics \
-        tombenke/darduino:v1.6.7 \
+        -v $HOME/.Xauthority:/home/developer/.Xauthority
+        --device /dev/ttyUSB0:/dev/ttyUSB0 \
+        -v $HOME/Arduino:/home/developer/Arduino \
+        tombenke/darduino \
         arduino
 ```
 
