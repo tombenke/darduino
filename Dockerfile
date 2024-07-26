@@ -26,7 +26,7 @@ RUN export uid=1000 gid=1000 && \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
 
-# Add developer user to the dialout group to be ale to write the serial USB device
+# Add developer user to the dialout group to be able to write the serial USB device
 RUN sed "s/^dialout.*/&developer/" /etc/group -i \
     && sed "s/^root.*/&developer/" /etc/group -i
 
