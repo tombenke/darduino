@@ -29,7 +29,7 @@ Run this if you want the container to be removed after the session:
         --device /dev/ttyUSB0:/dev/ttyUSB0 \
         -v $HOME/Arduino:/home/developer/Arduino \
         tombenke/darduino \
-        arduino
+        arduino-ide
 ```
 
 Or you can use `docker-compose` script like:
@@ -48,7 +48,7 @@ services:
       - "/tmp/.X11-unix:/tmp/.X11-unix"
       - "/dev/ttyUSB0:/dev/ttyUSB0"
       - "${HOME}/topics:/topics"
-    command: "arduino"
+    command: "arduino-ide"
     privileged: true
 ```
 
